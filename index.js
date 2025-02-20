@@ -9,11 +9,12 @@ const cors = require('cors')
 
 const app = express();
 const port = process.env.PORT || 8000;
-const cache = new NodeCache({ stdTTL: process.env.CACHE_TTL || 3600 });
+const cache = new NodeCache({ stdTTL: process.env.CACHE_TTL || 600, checkperiod: process.env.CHK_Period || 300, useClones: false });
 
 app.use(compression());
 app.use(morgan("combined"));
 app.use(cors());
+
 
 // Rate Limiting
 const limiter = rateLimit({
@@ -22,6 +23,7 @@ const limiter = rateLimit({
     message: "Too many requests, please try again later.",
 });
 app.use(limiter);
+
 
 app.get("/pokemon/:name", async (req, res) => {
     try {
