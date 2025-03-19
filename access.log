@@ -1,0 +1,4 @@
+::1 - - [19/Mar/2025:15:29:00 +0000] "GET /generation/9 HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+::1 - - [19/Mar/2025:15:29:01 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8000/generation/9" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+::1 - - [19/Mar/2025:15:29:14 +0000] "GET /generation/1 HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+::1 - - [19/Mar/2025:15:34:42 +0000] "GET /pokemon/pikachu HTTP/1.1" 200 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
