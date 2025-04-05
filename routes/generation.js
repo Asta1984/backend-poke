@@ -10,12 +10,15 @@ router.get("/:id", async (req, res) => {
         const cacheKey = `generation-${id}`;
 
         if (cache.has(cacheKey)) {
-            return res.json(cache.get(cacheKey));
+            const cachedData = cache.get(cacheKey);
+            // Return only pokemon_species from cache
+            return res.json(cachedData.pokemon_species);
         }
 
         const response = await axios.get(`https://pokeapi.co/api/v2/generation/${id}`);
         cache.set(cacheKey, response.data);
-        res.json(response.data);
+        // Return only pokemon_species from API response
+        res.json(response.data.pokemon_species);
     } catch (error) {
         console.error("Error fetching generation:", error.message);
         res.status(500).json({ error: "Pokemon generation not found or API error" });
